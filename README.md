@@ -1,6 +1,4 @@
 # Leetcode Solutions
-All the leetcode problems I solve will be added to this repository. To check the output of my solution copy and paste the solution into the problem on leetcode (the problem will be linked in the code files for each problem).
+All the leetcode problems I solve will be added to this repository. (These can't be run locally! Can only be run on leetcode)
 
-Fun way to track my progress and keep myself accountable :)
-
-I am currently solving leetcode in Java! 
+Current leetcoding language: Java
