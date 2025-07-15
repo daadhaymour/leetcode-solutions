@@ -1,22 +1,17 @@
 class Solution {
     public boolean containsDuplicate(int[] nums) {
 
-        //boolean variable to store if duplicate found or not
+        Set<Integer> seen = new HashSet(); // use hash set to check for duplicates by recording the     numbers we have already seen
 
-        boolean duplicate = false;
-
-        // nested for loop, first for loop chooses an element, second for loop chekcs for duplicate
-
-        for (int i=0; i<nums.length; i++){
-            for(int j= i+1; j<nums.length; j++){ //j=i+1 so that an element isnt compared to itself 
-                if (nums[i] == nums[j]){
-                    duplicate = true;
-                    break;
-                }
+        for(int num:nums){
+            if (seen.contains(num)){
+                return true;
             }
+            seen.add(num);
         }
 
-        return duplicate;
+        return false;
+
         
     }
 }
