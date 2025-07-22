@@ -1,24 +1,26 @@
 class Solution {
     public boolean isAnagram(String s, String t) {
-        //if the lengths are different then it's automatically not an anagram
-        if(s.length() != t.length()){
+
+        //if lengths are not equal it is automatically not an anagram
+        if (s.length() != t.length()){
             return false;
         }
-        char[] sSort = s.toCharArray();
-        char[] tSort = t.toCharArray();
 
-        Arrays.sort(sSort);
+        //hashmap solution 
 
-        Arrays.sort(tSort);
+        HashMap<Character, Integer> countS = new HashMap<>();
 
-        //check if each element in sorted s and t arrays are the same
-        return Arrays.equals(sSort, tSort);
+        HashMap<Character, Integer> countT = new HashMap<>();
 
-        
+        for(int i=0; i<s.length(); i++){
+            //add each element in array s and t into the hashmap
+            countS.put(s.charAt(i), countS.getOrDefault(s.charAt(i),0)+1);
+            countT.put(t.charAt(i), countT.getOrDefault(t.charAt(i),0)+1);
 
+        }
 
-
-
+        // return the computation of the comparison of hashamp counts and countt
+        return countS.equals(countT);
 
         
     }
